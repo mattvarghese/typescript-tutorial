@@ -8,7 +8,6 @@ import HTTPServer from './httpServer';
 
 const handler = (_request: IncomingMessage, response: ServerResponse) => {
     response.end("Hello world!");
-
 };
 
 async function main(): Promise<void> {
