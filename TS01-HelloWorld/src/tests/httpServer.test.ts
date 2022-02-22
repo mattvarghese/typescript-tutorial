@@ -27,6 +27,7 @@ describe("httpServer", () => {
     it("returns string from handler", async () => {
         const httpResult = await new Promise<IncomingMessage>(resolveFn => http.get("http://localhost:" + port, resolveFn));
 
+        // https://stackoverflow.com/questions/31006711/get-request-body-from-node-jss-http-incomingmessage
         let resultBody: string = "";
         httpResult.on('data', (chunk) => {
             resultBody += chunk;
@@ -35,4 +36,4 @@ describe("httpServer", () => {
 
         expect(resultBody).toBe(responseMessage);
     });
-})
+});
