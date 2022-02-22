@@ -1,18 +1,19 @@
-# TypeScript Tutorial / Hello World
+# TS01: TypeScript Tutorial / Hello World
 This folder contains companion code for my YouTube TypeScript Tutorial
 
 Chapter 1: Hello World
-* Link: <>
-* Blog Link: <>
+* Link: < coming soon! >
+* Blog Link: < coming soon! >
 * GitHub: https://github.com/mattvarghese/typescript-tutorial > TS01-HelloWorld
 
 # Contents
 This chapter sets up a TypeScript NodeJS Console application
-that runs a basic HTTP server. It covers
-* Visual Studio Integration and debugging
-* Basic tsconfig.json settings
-* ESLint
-* Unit Testing
+that runs a basic HTTP server. It:
+* Is an Object Oriented TypeScript version of the NodeJS hello world: https://nodejs.org/en/docs/guides/getting-started-guide/
+* Has Visual Studio Integration and debugging support
+* Examines basic tsconfig.json settings
+* Has ESLint integration
+* Demonstrates Unit Testing with ts-jest
 
 # Setup Steps 
 ## Setup Project
