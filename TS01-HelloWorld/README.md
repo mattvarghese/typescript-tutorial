@@ -3,6 +3,9 @@ This folder contains companion code for my YouTube TypeScript Tutorial
 Chapter 1: Hello World
 Link: <>
 Blog Link: <>
+GitHub: https://github.com/mattvarghese/typescript-tutorial
+
+
 
 # Contents
 This chapter sets up a TypeScript NodeJS Console application
@@ -27,6 +30,7 @@ Add
   ]
 ```
 to tsconfig.json
+
 ## Add src folder
 Add src folder and main.ts
 Update scripts
@@ -36,4 +40,13 @@ Update scripts
 npm install -D ts-node ts-jest @types/jest
 ```
 Also add jest.config.ts. See limiting to only TS files.
+Add test script
 
+## Add ESLint
+```
+$ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+Add .eslintrc
+Add lint script in package.json
+use // eslint-disable-line   or  // eslint-disable-next-line  to suppress errors
+Reference: https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/

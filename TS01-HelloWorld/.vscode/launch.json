@@ -1,9 +1,15 @@
+// Copyright (C) 2022 Varghese Mathew (Matt)
+// Distributed under GNU GENERAL PUBLIC LICENSE Version 3
+// See ~/LICENSE for details
+// GitHub: https://github.com/mattvarghese/typescript-tutorial
+
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    
         {
             "type": "node",
             "name": "Run tests using Jest",

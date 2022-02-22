@@ -1,3 +1,8 @@
+// Copyright (C) 2022 Varghese Mathew (Matt)
+// Distributed under GNU GENERAL PUBLIC LICENSE Version 3
+// See ~/LICENSE for details
+// GitHub: https://github.com/mattvarghese/typescript-tutorial
+
 import http, { IncomingMessage, ServerResponse } from 'http';
 import HTTPServer from '../httpServer';
 
@@ -28,7 +33,7 @@ describe("httpServer", () => {
         const httpResult = await new Promise<IncomingMessage>(resolveFn => http.get("http://localhost:" + port, resolveFn));
 
         // https://stackoverflow.com/questions/31006711/get-request-body-from-node-jss-http-incomingmessage
-        let resultBody: string = "";
+        let resultBody = "";
         httpResult.on('data', (chunk) => {
             resultBody += chunk;
         });

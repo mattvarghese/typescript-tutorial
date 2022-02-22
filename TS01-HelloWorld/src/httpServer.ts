@@ -1,3 +1,7 @@
+// Copyright (C) 2022 Varghese Mathew (Matt)
+// Distributed under GNU GENERAL PUBLIC LICENSE Version 3
+// See ~/LICENSE for details
+// GitHub: https://github.com/mattvarghese/typescript-tutorial
 
 import { createServer, IncomingMessage, Server, ServerResponse } from 'http';
 
@@ -18,6 +22,6 @@ export class HTTPServer {
     public async stopServer(): Promise<void> {
         await new Promise<Error | undefined>(resolveFn => this.server.close(resolveFn));
     }
-};
+}
 
 export default HTTPServer;

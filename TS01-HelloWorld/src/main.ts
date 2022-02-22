@@ -1,3 +1,8 @@
+// Copyright (C) 2022 Varghese Mathew (Matt)
+// Distributed under GNU GENERAL PUBLIC LICENSE Version 3
+// See ~/LICENSE for details
+// GitHub: https://github.com/mattvarghese/typescript-tutorial
+
 import { IncomingMessage, ServerResponse } from 'http';
 import HTTPServer from './httpServer';
 
