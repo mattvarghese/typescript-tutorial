@@ -1,0 +1,30 @@
+{
+  "name": "ts01-helloworld",
+  "version": "1.0.0",
+  "description": "Hello World HTTP Server using TypeScript and NodeJS, with Visual Studio Code, ESLint, and Unit Testing",
+  "main": "src/main.ts",
+  "homepage": "https://www.youtube.com/channel/UCs2xrnLFzKFeZMhwn7_CquQ",
+  "scripts": {
+    "test": "npm run build && jest",
+    "build": "npm install && npx --package typescript tsc",
+    "start": "npm run build && node build/main.js",
+    "clean": "npm install -D typescript && npx --package typescript tsc clean-all.ts && node clean-all.js"
+  },
+  "keywords": [
+    "TypeScript",
+    "NodeJS",
+    "ESLint",
+    "Visual Studio Code",
+    "VSCode",
+    "UnitTests"
+  ],
+  "author": "Matt | Varghese Mathew",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.19",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}
