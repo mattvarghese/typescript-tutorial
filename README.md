@@ -18,3 +18,7 @@ and to prevent blatant plagiarism.
 Each capter in my tuotirals have a chapter specific folder in this repository.
 See the Readme.md files in individual chapter specific folders for 
 usage of respective content.
+
+# About the Author
+Find me on LinkedIn at: https://www.linkedin.com/in/matt-varghese-b609979/
+Find me on Blogger at: https://mattvarghese-cs.blogspot.com/
