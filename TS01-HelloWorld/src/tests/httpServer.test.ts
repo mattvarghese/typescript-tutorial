@@ -9,14 +9,17 @@ import HTTPServer from '../httpServer';
 describe("httpServer", () => {
     
     let server: HTTPServer;
-    const responseMessage = "Hello world!";
-    const port = 8080;
+    const responseMessage = "Unit Test message!";
+    const hostname = "127.0.0.1";
+    const port = 3000;
     
     beforeEach(async () => {
         const handler = (_request: IncomingMessage, response: ServerResponse) => {
+            response.statusCode = 200;
+            response.setHeader('Content-Type', 'text/plain');
             response.end(responseMessage);
         };
-        server = new HTTPServer(port, handler);
+        server = new HTTPServer(port, hostname, handler);
         await server.StartServer();
     });
 
