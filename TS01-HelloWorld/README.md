@@ -2,8 +2,8 @@
 This folder contains companion code for my YouTube TypeScript Tutorial
 
 Chapter 1: Hello World
-* Link: < coming soon! >
-* Blog Link: < coming soon! >
+* Link: https://www.youtube.com/watch?v=23253VvVqB4
+* Blog Link: https://mattvarghese-cs.blogspot.com/2022/02/ts01-hello-world-typescript-nodejs-http.html
 * GitHub: https://github.com/mattvarghese/typescript-tutorial > TS01-HelloWorld
 
 # Contents
@@ -34,6 +34,7 @@ to tsconfig.json
 ## Add src folder
 * Add src folder and main.ts
 * Update scripts
+* Convert to OOP using src/httpServer.ts
 
 ## Add jest
 ```
@@ -49,4 +50,4 @@ $ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/esl
 * Add .eslintrc
 * Add lint script in package.json
 * use // eslint-disable-line   or  // eslint-disable-next-line  to suppress errors
-* Reference: https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+

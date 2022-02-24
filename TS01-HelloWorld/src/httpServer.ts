@@ -5,19 +5,26 @@
 
 import { createServer, IncomingMessage, Server, ServerResponse } from 'http';
 
-type HTTPHandler = (request: IncomingMessage, response: ServerResponse) => void;
+// Define a handler type
+export type HTTPHandler = (request: IncomingMessage, response: ServerResponse) => void;
 
+// Define the server class
 export class HTTPServer {
+    // Private fields
     private port: number;
     private hostname: string;
     private handler: HTTPHandler;
     private server: Server;
+
+    // constructor
     public constructor(port: number, hostname: string, handler: HTTPHandler) {
         this.port = port;
         this.handler = handler;
         this.hostname = hostname;
         this.server = createServer(this.handler);
     }
+
+    //methods
     public async StartServer(): Promise<void> {
         await new Promise<void>(resolveFn => this.server.listen(this.port, this.hostname, resolveFn));
     }
@@ -26,4 +33,5 @@ export class HTTPServer {
     }
 }
 
+// export the HTTPServer as the default for the module
 export default HTTPServer;

@@ -6,7 +6,7 @@
 import { exec } from 'child_process';
 import * as os from 'os';
 
-function puts(_error, stdout, _stderr) {
+function puts(_error, stdout, _stderr) {  // eslint-disable-line 
     console.log(stdout)
 }
 

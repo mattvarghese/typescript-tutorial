@@ -1,7 +1,6 @@
 # typescript-tutorial
 This project includes companion code for my TypeScript tutorial 
-on my Youtube Channel: https://www.youtube.com/channel/UCs2xrnLFzKFeZMhwn7_CquQ 
-(coming soon!)
+on my Youtube Channel: https://www.youtube.com/watch?v=23253VvVqB4&list=PLi5RQ31roh7lAUtSPZdzWZ6newdoXAyPI
 
 # License
 Content in this repository is distributed under GNU GPL V3.
