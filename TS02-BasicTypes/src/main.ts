@@ -313,7 +313,9 @@ myArray[-1] = -1;
 // console.log(myArray.length); // add later
 // console.log(myArray[-5]);
 // map function
-let doubleArray = myArray.map(val => val * 2);
+// let doubleArray = myArray.map(val => val * 2);
+// Note: above is same as
+let doubleArray = myArray.map((val) => { val * 2; });
 console.log(doubleArray[4]); // expect 8
 console.log(doubleArray[-1]); // map doesn't know about the negative indices
 // push function
