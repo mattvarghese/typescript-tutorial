@@ -6,6 +6,13 @@ Chapter 2: Basic Types
 * Blog Link: TBD
 * GitHub: https://github.com/mattvarghese/typescript-tutorial > TS02-BasicTypes
 
+# Running GitHub code
+Make sure to do
+```
+$ npm install
+```
+before running the code after cloning from GitHub, or doing **npm run clean**.
+
 # Contents
 This chapter teaches you the basic types in TypeScript. We will cover:
 * Code comments
@@ -25,8 +32,16 @@ This chapter teaches you the basic types in TypeScript. We will cover:
 * null
 * Nullable
 * Type conversions
+* any and unknown
 * Type assertions and checks
 * Type aliases
+* Arrays
+* Tuples
+* Enumerations
+* object
+* Type alias for object
+* Enum indexed properties
+* Some native object types
 
 # Setup Commands
 ```
@@ -38,10 +53,3 @@ $ npx tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonMod
 ```
 $ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
-
-# Running GitHub code
-Make sure to do
-```
-$ npm install
-```
-before running the code after cloning from GitHub, or doing **npm run clean**.

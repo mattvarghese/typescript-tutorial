@@ -278,7 +278,115 @@ type addResultType = ReturnType<addFunctionType>;  // alias for result type
 const addResult2: addResultType = addAlias(4, 5);
 console.log(addResult2);
 
+/* Aside: Comments in code!
+ * I have copious comments above
+ *  * Not just for you to understand
+ *  * For me to understand when I look at this after 6 weeks
+ * Keeping comments in sync as you update code
+ *  * Matt has a complex piece of code with detailed comments
+ *  * Newbie Jack comes along, changes something, but doesn't update comments!
+ *  * Now, comments are out of sync with code - happens all the time in software companies
+ *  * Unfortunately, Jack still gets paid - the nature of how things work
+ * DON'T be Jack - sync your comments as you change the code!
+ */
+
+// Arrays
+console.log("\n===== Arrays =====");
+let myArray: number[];
+// myArray[1] = 42; // used before initialized
+myArray = [];
+myArray[1] = 42;
+myArray = new Array(4);  // length is optional, and just for initial storage reservation
+for (let index = 1; index < 6; index++) {
+    myArray[index] = index;
+    // myArray[-index] = -index; // add later
+    console.log(`Index ${index}: ${myArray[index]}`);
+}
+// length property
+console.log(myArray.length); // 6 - because arrays in javaScript start at 0
+myArray[-1] = -1;
+// use -ve indices etc with caution! Weird behaviors!
+// console.log(myArray.length); // add later
+// console.log(myArray[-5]);
+// map function
+let doubleArray = myArray.map(val => val * 2);
+console.log(doubleArray[4]); // expect 8
+console.log(doubleArray[-1]); // map doesn't know about the negative indices
+// push function
+myArray.push(15);  // becomes index 6
+console.log(myArray[6]);
+myArray[20] = 20;
+myArray.push(85);  // this becomes index 21, not index 7
+console.log(myArray[7]);  // undefined
+console.log(myArray[21]); // 85
+// Array initializing
+let myArray2 = [1, 2, 3, 4, 5];
+console.log(myArray2[1]); // logs 2
+delete myArray2[1];
+console.log(myArray2[1]); // undefined
+// Array of union types
+let myArray3 = [1, "a", 2, "b", "c", "d", true];  // avoid for readability!
+// Array is a mutable type!
+// instanceof operator
+if (myArray instanceof Array) {
+    console.log("myArray is an Array");
+}
+// Multi dimensional arrays
+let myStrMatrix: string[][] = new Array();  // see lint error: Array literal notation is preferable
+myStrMatrix[0] = new Array();  // add later - compile error without this
+myStrMatrix[0][0] = 'x';
+myStrMatrix[2] = new Array();  // add later - compile error without this
+myStrMatrix[2][5] = 'a string';
+// myStrMatrix[4][5][8] = "test";  // can't do because we created as 2-D
+
+// Tuples
+console.log("\n===== Tuples =====");
+// Fixed length arrays with type constraints
+type myTuple1 = [string, number];
+let myTupleVal1: myTuple1 = ["a string", 18];
+// let myTupleVal1: myTuple1 = ["a string", 18, "another string"]; // no can't do
+// However, push() still works
+myTupleVal1.push("another string");
+console.log(myTupleVal1[0]);
+console.log(myTupleVal1[1]);
+// console.log(myTupleVal1[2]); // can't do this, even though we pushed
+console.log(myTupleVal1.pop()); // this gives us the pushed value
+// 3-tuple
+const myThreeTuple: [string, number, boolean] = ["str", 42, true];
+
+// Enumerations
+console.log("\n===== Enumerations =====");
+enum color {
+    Violet,
+    Indigo, // can give initial values
+    Blue,
+    Green,
+    Yellow,
+    Orange,
+    Red
+}
+let myColor: color;
+myColor = color.Red;
+console.log(myColor);   // writes 6
+enum color2 {
+    Red = "Red",
+    Green = "Yellow",
+    // Blue - error: need value
+    // But we can do:
+    Blue = 3,
+    Yellow  // then this becomes legal
+}
+const myColor2 = color2.Red;
+console.log(myColor2);
+// Iterating through enums
+for (let oneColor in color2) {
+    console.log(`${oneColor} is a color! Its value is ${color2[oneColor]}`);
+}
+// This also shows a weird thing about TypeScript compiling to JavaScript.
+// Do not abuse this - becomes unreadable code!
+
 // object
+console.log("\n===== object =====");
 const obj = { x: 42, y: 35 };
 if ("x" in obj) {
     console.log("found");
@@ -292,8 +400,46 @@ if (234 in obj2) {
 }
 
 // Type alias for object
+console.log("\n===== Type alias for object =====");
 type myObjectType = {
     name: string,
     value: number,
     specialValue: 42
 };
+let myObj: myObjectType = {
+    name: "it's name",
+    value: 15,
+    specialValue: 42
+}
+// myObj = { x: 42 };  // No can't do
+// Do not abuse this - we will learn classes and interfaces later!
+
+// Enum indexed properties
+console.log("\n===== Enum indexed properties =====");
+const messagesForColors = {
+    [color2.Blue]: "I love your blue shirt!",
+    [color2.Green]: "Green is my favorite color!",
+    [color2.Red]: "The one color I can't stand is red.",
+    [color2.Yellow]: "Yellow, yellow, dirty fellow!"
+};
+const greetByColor = function (choice: color2) {
+    console.log(messagesForColors[choice]);
+}
+greetByColor(color2.Green);
+// This is useful for some stuff like wiring up command arguments etc.
+
+// Some native object types
+// Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+console.log("\n===== Some native object types =====");
+const today = new Date();
+console.log(today);
+// We already saw regular expressions
+// We already saw arrays
+// Similar title-case types for Number, Boolean, String - avoid!
+const myMap = new Map();
+myMap.set("stringKey", 42);
+myMap.set(85, true);
+// Add type constraint
+const myDictionary = new Map<string, string>();
+myDictionary.set("key1", "value1");
+console.log(myDictionary.get("key1"));
