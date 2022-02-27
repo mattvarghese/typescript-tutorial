@@ -4,6 +4,11 @@
  Multiline comment
  Can keep going
  */
+/* Other stuff like JSDoc, XML documentation etc are 
+ * are just imposing additional constraints on comments 
+ * so another library can extract machine readable data
+ * from comments.
+*/
 
 // If you are cloning the GitHub repo, don't forget to do npm install 
 // after cloning / after each time you do npm run clean
@@ -14,35 +19,57 @@ console.log(20);  // 20 is a numeric literal
 console.log("Hello, World!");  // Hello, World! is a string literal
 console.log(true); // true is a boolean literal
 
-// constants
+// constants and the const keyword
 console.log("\n===== constants =====");
 const x = 42;  // Literal types - type of x is not number, but "the number 42"
 const y = true; // type of y is not boolean, but "the boolean value true"
 // console.log(5 == 6);  // Because of literal types, this is a compile error
 
-// variables
+// variables & the let keyword
 console.log("\n===== variables =====");
 let i = 42;   // Now, type of i is number
 let str = "Hello, World!"; // type of str is string
 // typeof operator
 console.log(typeof i);
 console.log(typeof str);
+// Variable name requirements
+// * must start with letter, underscore, or dollar sign
+// * can contain letters, underscores, dollar signs, or numbers
+// * avoid conflicts with language and common identifiers
+// There is also a var keyword.
+// With var, you can redeclare the same variable multiple times
+// with different scopes. 
+var var1 = 43; // No checking for unused, as it could be in another module
+var var1 = 18; // within same scope, must have same type
+function varTestFunction(): void {
+    // Different scope can have different type
+    var var1 = true;
+    console.log(typeof var1);
+}
+varTestFunction();          // prints boolean
+console.log(typeof var1);   // prints number
+// Recommendation: Do not use "var" keyword - this brings us back to JavaScript mess
+
+// Boolean Type
+console.log("\n===== boolean =====");
+let myBool = true;
+if (myBool) {
+    console.log("The boolean was true");
+}
 
 // Special numbers NaN and Infinity
-console.log("\n===== NaN and Infinity =====");
+console.log("\n===== number =====");
 console.log(10 / 0);
 let myBigVal = Infinity;  // there is also -Infinity
 console.log(myBigVal === (10 / 0));
 console.log(Infinity * 0);
 console.log(NaN === (Infinity / 0));
 console.log(NaN === NaN);
-
 // isFinite to check if value is not NaN and not +/- Infinity
 console.log("\n===== isFinite checks =====");
 console.log(isFinite(NaN));
 console.log(isNaN(Infinity)); //false
 console.log(isFinite(-Infinity));
-
 // Hexadecimal numbers, exponent notation etc.
 console.log("\n===== hex and exponent =====");
 const numHex = 0x11;
@@ -59,6 +86,9 @@ console.log(str3);
 console.log("Hello, World!\nHello, World!\rSad");
 // \u#### (unicode hex) Ex: ഷ ("sha" in Malayalam)
 console.log("\u0D37");
+// strings are immutable in TypeScript / JavaScript
+// Cannot change a character in place like in C++
+// Replacing characters etc results in a new string
 
 // regular expressions - are also types: RegExp
 console.log("\n===== regular expressions =====");
@@ -81,6 +111,9 @@ console.log(add2(5, 3));
 console.log(add1 === add2);
 console.log(add1 == add2);
 // function type is not just one type - different function types based on signatures
+// Function return type
+let addResult: ReturnType<typeof add2> = add2(10, 20);
+console.log(typeof addResult);
 
 // Union Types
 console.log("\n===== union types =====");
@@ -99,7 +132,7 @@ const add3 = (val1: number | string, val2: number | string): number | string => 
         return val1 as number + val2 as number;
     } else if ((typeof val1 === "string") && (typeof val2 === "string")) {
         return val1 as string + val2 as string;
-    } else {
+    } else {   // don't add this at first - show the return problem
         throw new Error("not implemented");
     }
 }
@@ -133,13 +166,16 @@ console.log("\n===== intersection types =====");
 let stringAndBoolean: string & boolean;
 // stringAndBoolean = true;  // No can't do
 // stringAndBoolean = "hello";  // No can't do
-// infact, if you look at the inferred type, it is never!!
+// in fact, if you look at the inferred type, it is never!!
+// Example of when you would use intersection types: Framework code
+// * https://stackoverflow.com/a/61490811
+// * https://github.com/Xample/ts-throwable/blob/master/src/index.ts 
 
 // undefined type - value for uninitialized variables
 console.log("\n===== undefined type =====");
 let numUndefined: number | undefined;
-console.log(numUndefined); 
-// Likewise, could use undefined in the add return type instead of throwing erro to make compiler happy
+console.log(numUndefined);
+// Likewise, could use undefined in the add return type instead of throwing error to make compiler happy
 const add5 = (val1: number | string, val2: number | string): number | string | undefined => {
     if ((typeof val1 === "number") && (typeof val2 === "number")) {
         return val1 as number + val2 as number;
@@ -194,13 +230,53 @@ nullableTest2(undefined);  // even then, one param has to be explicitly passed
 // Javascript people will show tables of how types are 
 // implicitly converted in mixed type expressions.
 // The whole point of TypeScript is to not mess up types
-// by doing that. So don't bother with the table. Rather
-// don't write mixed type expressions unnecessarily.
-// Where the type is not obvious, use a type assertion.
+// by doing that. So don't bother with the table too much.
+// Rather, don't write mixed type expressions unnecessarily.
+// If you need to convert
+console.log("\n===== Type conversion =====");
+// * to boolean, use !!
+console.log(!!"false");  // this is true, not false, as all strings are true
+// * to number, use parseInt or parseFloat
+console.log(parseInt("45.2"));  // 45
+console.log(parseFloat("456.2e-1"));  // 45.62
+// * to string: everything has a toString() method
+console.log(true.toString());
+
+// Any and unknown types
+console.log("\n===== any and unknown =====");
+let anyVal: any = "Hello, World!";
+let strFromAny: string = anyVal; // This works
+let unknownVal: unknown = anyVal; // unknown can be assigned an any value
+// let strFromUnknown: string = unknownVal; unknown cannot be assigned without type assertion
+
+// Where the type is not obvious, use a type assertion or type check.
+console.log("\n===== Type assertions and checks =====");
+console.log((anyVal as string).length);  // style 1 - as keyword
+console.log((<string>anyVal).length);    // style 2
+let strFromUnknown: string = unknownVal as string;  // type assertion with unknown
+console.log(strFromUnknown);
+if (typeof anyVal === "string") {  // sometimes this is better
+    // typescript understands the typeof check, and gives intellisense
+    console.log(anyVal.length);
+}
+if (typeof unknownVal === "string") {  // same with unknown
+    console.log(unknownVal.length);
+}
 
 // Type aliases
+console.log("\n===== Type aliases =====");
 // especially for functions - callback methods etc
 // ReturnType<functionType> - useful to define variables?
+type mattsBoolean = boolean;
+let myBoolVal: mattsBoolean = true;
+//if (typeof myBoolVal === "mattsBoolean") { } // Comparing to mattsBoolean fails
+type addFunctionType = (val1: number, val2: number) => number;
+let addAlias: addFunctionType = add1;
+console.log(addAlias(4, 5));
+addAlias = add2;  // Change the function
+type addResultType = ReturnType<addFunctionType>;  // alias for result type
+const addResult2: addResultType = addAlias(4, 5);
+console.log(addResult2);
 
 // object
 const obj = { x: 42, y: 35 };
@@ -211,4 +287,13 @@ if ("x" in obj) {
 const obj2 = {
     [234]: "hello",
 }
-console.log(obj2[234]);
+if (234 in obj2) {
+    console.log(obj2[234]);
+}
+
+// Type alias for object
+type myObjectType = {
+    name: string,
+    value: number,
+    specialValue: 42
+};
