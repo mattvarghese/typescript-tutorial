@@ -2,6 +2,7 @@
 // Distributed under GNU GENERAL PUBLIC LICENSE Version 3
 // See ~/LICENSE for details
 // GitHub: https://github.com/mattvarghese/typescript-tutorial
+
 {
     "root": true,
     "parser": "@typescript-eslint/parser",
