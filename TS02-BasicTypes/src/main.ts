@@ -420,6 +420,22 @@ let myObj: myObjectType = {
 // myObj = { x: 42 };  // No can't do
 // Do not abuse this - we will learn classes and interfaces later!
 
+// mutable vs. immutable
+console.log("\n===== mutable vs. immutable =====");
+let objX = { a: true, b: 42 };
+let objY = objX;
+objY.a = false;
+objY.b = 84;
+// Changing one's properties changes the other, because they point to same object
+console.log(`X-a: ${objX.a}, X-b: ${objX.b}`);
+// Compare that to string
+let strX = "Test 1";
+let strY = strX;
+strY = strY.replace("1", "2");
+// They are now pointing to different strings
+console.log("StrY: " + strY + ", StrX: " + strX);
+// Cannot replace a character in a string "in place"
+
 // Enum indexed properties
 console.log("\n===== Enum indexed properties =====");
 const messagesForColors = {

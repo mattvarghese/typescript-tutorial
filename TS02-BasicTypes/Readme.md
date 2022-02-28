@@ -40,6 +40,7 @@ This chapter teaches you the basic types in TypeScript. We will cover:
 * Enumerations
 * object
 * Type alias for object
+* mutable vs. immutable
 * Enum indexed properties
 * Some native object types
 
