@@ -198,6 +198,7 @@ const writeToConsole = function (message: string): void {
 // in general, undefined is for variables / values, void is for functions.
 // you could still do
 let result = writeToConsole("asdf");  // result gets type void; doesn't really make any sense.
+console.log(result);
 
 // null value and null type
 console.log("\n===== null type and null value =====");
@@ -315,7 +316,7 @@ myArray[-1] = -1;
 // map function
 // let doubleArray = myArray.map(val => val * 2);
 // Note: above is same as
-let doubleArray = myArray.map((val) => { val * 2; });
+let doubleArray = myArray.map((val) => { return val * 2; });
 console.log(doubleArray[4]); // expect 8
 console.log(doubleArray[-1]); // map doesn't know about the negative indices
 // push function
