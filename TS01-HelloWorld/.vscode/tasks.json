@@ -1,4 +1,4 @@
-// Copyright (C) 2022 Varghese Mathew (Matt)
+// Copyright (C) 2022 Matt Varghese
 // Distributed under GNU GENERAL PUBLIC LICENSE Version 3
 // See ~/LICENSE for details
 // GitHub: https://github.com/mattvarghese/typescript-tutorial

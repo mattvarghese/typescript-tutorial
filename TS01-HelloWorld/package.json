@@ -19,7 +19,7 @@
     "VSCode",
     "UnitTests"
   ],
-  "author": "Matt | Varghese Mathew",
+  "author": "Matt Varghese",
   "license": "GPL-3.0",
   "devDependencies": {
     "@types/jest": "^27.4.0",
