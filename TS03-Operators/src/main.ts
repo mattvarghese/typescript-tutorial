@@ -14,6 +14,10 @@ x = 90;
 console.log("x = 90: " + x);
 let str: string;
 str = "ABC";
+console.log('str = "ABC": ' + str);
+let bool: boolean;
+bool = true;
+console.log("bool = true: " + bool);
 
 
 
@@ -54,12 +58,30 @@ console.log(`++x: ${++x}`);      // Prefix: change, then use
 console.log("x after ++x: " + x);
 console.log("--x: " + --x);      // Prefix: change, then use
 console.log("x after --x: " + x);
-console.log("x--: " + x--);      // Postfix: use, then chnge
+console.log("x--: " + x--);      // Postfix: use, then change
 console.log("x after x--: " + x);
-console.log(`x--: ${x--}`);      // Postfix: use, then chnge
+console.log(`x--: ${x--}`);      // Postfix: use, then change
 console.log("x after x--: " + x);
 
+
+
 // Comparison operators
+console.log("\n== Comparison operators ==");
+console.log("x > 100: " + (x > 100));      // false
+console.log("x >= 10: " + (x >= 10));      // true
+console.log("x < 12: " + (x < 12));        // false
+console.log("x <= 12: " + (x <= 12));      // true
+// Equality/Inequality comparisons
+console.log("x == 12: " + (x == 12));      // DO NOT USE
+// console.log(x == '12');                 // legal in JavaScript
+// console.log("" == false);               // legal in JavaScript
+console.log("x === 12: " + (x === 12));    // true
+console.log("x !== 12: " + (x !== 12));    // false
+// === and !== also work on strings, booleans etc
+console.log("str === 'ABCDEFGHI': "
+    + (str === "ABCDEFGHI"));              // true
+
+
 
 // logical operators
 
