@@ -69,7 +69,7 @@ console.log(str + 12345);                  // ABCDEF12345
 console.log("\n== Arithmetic Assignment Operators ==");
 x += 10;  // same as x = x + 10
 console.log("x += 10: " + x);              // 14
-// Also -=, *=, /=, %=
+// Also -=, *=, /=, %=, **=
 // += on strings
 str += "GHI";
 console.log('str += "GHI": ' + str);       // ABCDEFGHI
@@ -179,7 +179,8 @@ console.log("-11 << 2 : " + bitResult);    // 44
 
 
 
-// comma operator
+// Comma Operator
+console.log("\n== Comma Operator ==");
 // Evaluates left to right, last value is the result
 console.log("x is: " + x);                 // 12
 x = (++x, x + 5, x - 1);  // 13, 13+5 does nothing, 13-1=12
@@ -188,10 +189,55 @@ console.log("x = ++x, x+5, x-1: " + x);    // 12
 
 
 
-// conditional operator
+// Spread Operator
+console.log("\n== Spread Operator ==");
+// spread on arrays
+let array = [1, 2, 3, 4, 5, 6];
+function add(...values:number[]) {
+    let res = 0;
+    for (let val of values) {
+        res += val;
+    }
+    return res;
+}
+console.log("add(...array): " + add(...array));
+// spread on objects
+let obj2 = { ...obj, propZ: 3 };
+let key: keyof typeof obj2;
+for (key in obj2) {
+    console.log(`obj[${key}]: ${obj2[key]}`);
+}
 
-// Other operators
+
+// Conditional Operator
+console.log("\n== Conditional Operator ==");
+console.log("x: " + x);
+let status = (x === 12) ? "x is 12" : "x is not 12";
+console.log('(x === 12) ? "x is 12" : "x is not 12": ' + status);
+
+
+
+// Other Operators
+console.log("\n== Other Operator ==");
+// typeof
+// keyof
+// instanceof
+// new
+// in
+// void
+// ?. - Optional Chaining
+let objX: { x: number } | undefined;
+console.log("Before assignment: " + objX?.x);
+objX = { x: 100 };
+console.log("After assignment: " + objX?.x);
+// await, yield - we'll see later
+
+
 
 // Operator precedence
+// Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+// Recommendation: always use brackets when precedence is not obvious
+
+
 
 
