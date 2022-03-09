@@ -90,7 +90,7 @@ console.log("x after x--: " + x);
 
 
 // Comparison operators
-console.log("\n== Comparison operators ==");
+console.log("\n== Comparison Operators ==");
 console.log("x > 100: " + (x > 100));      // false
 console.log("x >= 10: " + (x >= 10));      // true
 console.log("x < 12: " + (x < 12));        // false
@@ -193,7 +193,7 @@ console.log("x = ++x, x+5, x-1: " + x);    // 12
 console.log("\n== Spread Operator ==");
 // spread on arrays
 let array = [1, 2, 3, 4, 5, 6];
-function add(...values:number[]) {
+function add(...values: number[]) {
     let res = 0;
     for (let val of values) {
         res += val;
@@ -218,7 +218,7 @@ console.log('(x === 12) ? "x is 12" : "x is not 12": ' + status);
 
 
 // Other Operators
-console.log("\n== Other Operator ==");
+console.log("\n== Other Operators ==");
 // typeof
 // keyof
 // instanceof

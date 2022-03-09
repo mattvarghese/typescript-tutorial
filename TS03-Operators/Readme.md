@@ -14,7 +14,19 @@ $ npm install
 before running the code after cloning from GitHub, or doing **npm run clean**.
 
 # Contents
-TBD
+* Assignment Operator
+* Destructuring
+* Arithmetic Operators
+* Arithmetic Assignment Operators
+* Increment/Decrement Operators
+* Comparison Operators
+* Logical Operators
+* Bitwise Operators
+* Comma Operator
+* Spread Operator
+* Conditional Operator
+* Other Operators
+* Operator precedence
 
 # Setup Commands
 ```
