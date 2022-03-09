@@ -2,8 +2,8 @@
 This folder contains companion code for my YouTube TypeScript Tutorial
 
 Chapter 2: Basic Types
-* Link: TBD
-* Blog Link: TBD
+* Link: https://www.youtube.com/watch?v=8BoYqScxpsU
+* Blog Link: https://mattvarghese-cs.blogspot.com/2022/03/ts03-operators-in-typescript.html
 * GitHub: https://github.com/mattvarghese/typescript-tutorial > TS03-Operators
 
 # Running GitHub code
