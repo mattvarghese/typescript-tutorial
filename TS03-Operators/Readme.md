@@ -26,7 +26,7 @@ before running the code after cloning from GitHub, or doing **npm run clean**.
 * Spread Operator
 * Conditional Operator
 * Other Operators
-* Operator precedence
+* Operator Precedence
 
 # Setup Commands
 ```
