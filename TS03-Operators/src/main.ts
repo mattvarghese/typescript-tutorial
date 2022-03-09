@@ -82,8 +82,8 @@ console.log(`++x: ${++x}`);      // Prefix: change, then use
 console.log("x after ++x: " + x);
 console.log("--x: " + --x);      // Prefix: change, then use
 console.log("x after --x: " + x);
-console.log("x--: " + x--);      // Postfix: use, then change
-console.log("x after x--: " + x);
+console.log("x++: " + x++);      // Postfix: use, then change
+console.log("x after x++: " + x);
 console.log(`x--: ${x--}`);      // Postfix: use, then change
 console.log("x after x--: " + x);
 
@@ -93,8 +93,8 @@ console.log("x after x--: " + x);
 console.log("\n== Comparison Operators ==");
 console.log("x > 100: " + (x > 100));      // false
 console.log("x >= 10: " + (x >= 10));      // true
-console.log("x < 12: " + (x < 12));        // false
-console.log("x <= 12: " + (x <= 12));      // true
+console.log("x < 14: " + (x < 14));        // false
+console.log("x <= 14: " + (x <= 14));      // true
 // With strings - use with caution
 console.log('"100" > "10": ' + ("100" > "10"));    // true
 console.log('"90" < "300": ' + ("90" < "300"));    // false
@@ -102,12 +102,12 @@ console.log('"A" <= "B": ' + ("A" <= "B"));        // true
 console.log('"10B" >= "1A": ' + ("10B" >= "1A"));  // false
 //console.log('"100" > 10: ' + ("100" > 10));      // No can't do
 // Equality/Inequality comparisons
-console.log("x == 12: " + (x == 12));      // DO NOT USE
-// console.log(x == '12');                 // legal in JavaScript
+console.log("x == 14: " + (x == 14));      // DO NOT USE
+// console.log(x == '14');                 // legal in JavaScript
 // console.log("" == false);               // legal in JavaScript
 // strict equality/inqeuality
-console.log("x === 12: " + (x === 12));    // true
-console.log("x !== 12: " + (x !== 12));    // false
+console.log("x === 14: " + (x === 14));    // true
+console.log("x !== 14: " + (x !== 14));    // false
 // === and !== also work on strings, booleans etc
 console.log("str === 'ABCDEFGHI': "
     + (str === "ABCDEFGHI"));              // true
@@ -130,7 +130,7 @@ console.log("(100 < 10) || (9 <= 9): " + result);
 result = (!result);
 console.log("(!result): " + result);
 // * short circuit
-console.log("x is: " + x);                 // 12
+console.log("x is: " + x);                 // 14
 result = (100 < 10) && (++x < 20);         // first result false
 console.log("x after (100 < 10) && (++x < 20): " + x); // no change
 result = (10 < 100) || (++x < 20);         // first result true
@@ -166,13 +166,13 @@ console.log("~bitResult bas2 : " + (bitResult >>> 0).toString(2));
 bitResult = 16 >> 2;  // right shift
 console.log("16 >> 2: " + bitResult);      // 4
 bitResult = -11 >> 2;  // -11 = 1...11110101
-console.log("-11 >> 2: " + bitResult);     // 4
+console.log("-11 >> 2: " + bitResult);     // -3
 bitResult = -11 >>> 2  // Zero-fill right shift
 console.log("-11 >>> 2: " + bitResult);    // 01...111101 = +ve
 bitResult = 16 << 2  // left shift - same as multiply by 2 ^ N
 console.log("16 << 2 : " + bitResult);     // 64
 bitResult = -11 << 2
-console.log("-11 << 2 : " + bitResult);    // 44
+console.log("-11 << 2 : " + bitResult);    // -44
 // No Zero/One -fill left shift. Always zeros from right
 // Also have assignment versions, except bitwise NOT
 // &=, |=, ^=, >>=, >>>=, <<=
@@ -182,9 +182,9 @@ console.log("-11 << 2 : " + bitResult);    // 44
 // Comma Operator
 console.log("\n== Comma Operator ==");
 // Evaluates left to right, last value is the result
-console.log("x is: " + x);                 // 12
-x = (++x, x + 5, x - 1);  // 13, 13+5 does nothing, 13-1=12
-console.log("x = ++x, x+5, x-1: " + x);    // 12
+console.log("x is: " + x);                 // 14
+x = (++x, x + 5, x - 1);  // 15, 15+5 does nothing, 15-1=14
+console.log("x = ++x, x+5, x-1: " + x);    // 14
 // AVOID using - generally just causes confusion!
 
 
@@ -211,9 +211,9 @@ for (key in obj2) {
 
 // Conditional Operator
 console.log("\n== Conditional Operator ==");
-console.log("x: " + x);
-let status = (x === 12) ? "x is 12" : "x is not 12";
-console.log('(x === 12) ? "x is 12" : "x is not 12": ' + status);
+console.log("x: " + x);                    // 14
+let status = (x === 14) ? "x is 14" : "x is not 14";
+console.log('(x === 14) ? "x is 14" : "x is not 14": ' + status);
 
 
 
@@ -226,15 +226,17 @@ console.log("\n== Other Operators ==");
 // in
 // void
 // ?. - Optional Chaining
-let objX: { x: number } | undefined;
-console.log("Before assignment: " + objX?.x);
-objX = { x: 100 };
-console.log("After assignment: " + objX?.x);
+let objX: { p: number } | undefined;
+console.log("Before assignment: " + objX?.p);
+objX = { p: 100 };
+console.log("After assignment: " + objX?.p);
 // await, yield - we'll see later
 
 
 
 // Operator precedence
+console.log("50 + 100 / 2: " + 50 + 100 / 2);
+console.log("50 + (100 / 2): " + 50 + (100 / 2));
 // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 // Recommendation: always use brackets when precedence is not obvious
 
