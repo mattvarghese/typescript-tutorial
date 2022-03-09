@@ -114,6 +114,7 @@ console.log("str === 'ABCDEFGHI': "
 // Generally, always use strict equal / not equal operators.
 
 
+
 // Logical Operators
 console.log("\n== Logical Operators ==");
 let result: boolean;
@@ -209,6 +210,7 @@ for (key in obj2) {
 }
 
 
+
 // Conditional Operator
 console.log("\n== Conditional Operator ==");
 console.log("x: " + x);                    // 14
@@ -234,12 +236,13 @@ console.log("After assignment: " + objX?.p);
 
 
 
-// Operator precedence
-console.log("50 + 100 / 2: " + 50 + 100 / 2);
-console.log("50 + (100 / 2): " + 50 + (100 / 2));
+// Operator Precedence
+console.log("\n== Operator Precedence ==");
+x = 50 + 100 / 2;
+console.log("50 + 100 / 2: " + x);
+x = 50 + (100 / 2);
+console.log("50 + (100 / 2): " + x);
 // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 // Recommendation: always use brackets when precedence is not obvious
-
-
 
 
