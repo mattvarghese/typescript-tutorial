@@ -1,7 +1,7 @@
 {
-  "name": "ts04-decisionsloops",
+  "name": "ts04-decisions",
   "version": "1.0.0",
-  "description": "TypeScript tutorial chapter on decision constructs, and looping constructs.",
+  "description": "TypeScript tutorial chapter on decision constructs.",
   "main": "build/main.js",
   "scripts": {
     "build": "npx tsc",

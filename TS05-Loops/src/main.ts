@@ -1,13 +1,13 @@
-// Decisions
+// Loops
 
-// If statement
+// for loop
 
-// Blocks and Variable Scopes
+// for .. in loop
 
-// Nested if statement
+// for .. of loop
 
-// Else statement
+// while loop
 
-// If else if ladder
+// do .. while loop
 
-// Switch statement
+// count characters in a string

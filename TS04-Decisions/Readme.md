@@ -1,11 +1,11 @@
-# TS04: TypeScript Tutorial / Decisions and Loops
+# TS04: TypeScript Tutorial / Decisions
 This folder contains companion code for my YouTube TypeScript Tutorial
 Playlist: https://www.youtube.com/watch?v=23253VvVqB4&list=PLi5RQ31roh7lAUtSPZdzWZ6newdoXAyPI
 
-Chapter 4: Decisions and Loops
+Chapter 4: Decisions
 * Link: <TBD>
 * Blog Link: <TBD>
-* GitHub: https://github.com/mattvarghese/typescript-tutorial > TS04-DecisionsLoops
+* GitHub: https://github.com/mattvarghese/typescript-tutorial > TS04-Decisions
 
 # Running GitHub code
 Make sure to do

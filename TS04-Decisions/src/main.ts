@@ -10,4 +10,6 @@
 
 // If else if ladder
 
+// Exception Handling
+
 // Switch statement
