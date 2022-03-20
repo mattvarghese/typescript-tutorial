@@ -1,10 +1,10 @@
 # TS03: TypeScript Tutorial / Operators
 This folder contains companion code for my YouTube TypeScript Tutorial
 
-Chapter 3: Operators
-* Link: https://www.youtube.com/watch?v=8BoYqScxpsU
-* Blog Link: https://mattvarghese-cs.blogspot.com/2022/03/ts03-operators-in-typescript.html
-* GitHub: https://github.com/mattvarghese/typescript-tutorial > TS03-Operators
+Chapter 4: Decisions and Loops
+* Link: <TBD>
+* Blog Link: <TBD>
+* GitHub: https://github.com/mattvarghese/typescript-tutorial > TS04-DecisionsLoops
 
 # Running GitHub code
 Make sure to do
@@ -14,19 +14,7 @@ $ npm install
 before running the code after cloning from GitHub, or doing **npm run clean**.
 
 # Contents
-* Assignment Operator
-* Destructuring
-* Arithmetic Operators
-* Arithmetic Assignment Operators
-* Increment/Decrement Operators
-* Comparison Operators
-* Logical Operators
-* Bitwise Operators
-* Comma Operator
-* Spread Operator
-* Conditional Operator
-* Other Operators
-* Operator Precedence
+* TBD
 
 # Setup Commands
 You don't need to do these if you're using a clone of the repository. You only need these if starting from scratch.
