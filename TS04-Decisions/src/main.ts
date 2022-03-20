@@ -4,6 +4,7 @@
 // GitHub: https://github.com/mattvarghese/typescript-tutorial
 
 // Decisions
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
 
 // Conditional Operator (Last lesson)
 console.log("\n== Conditional Operator ==");
@@ -53,5 +54,6 @@ if (x > 100) {
 // if-else-if ladder
 
 // Exception Handling
+// Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
 
 // Switch statement
