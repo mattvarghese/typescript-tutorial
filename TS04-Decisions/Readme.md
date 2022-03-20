@@ -1,5 +1,6 @@
-# TS03: TypeScript Tutorial / Operators
+# TS04: TypeScript Tutorial / Decisions and Loops
 This folder contains companion code for my YouTube TypeScript Tutorial
+Playlist: https://www.youtube.com/watch?v=23253VvVqB4&list=PLi5RQ31roh7lAUtSPZdzWZ6newdoXAyPI
 
 Chapter 4: Decisions and Loops
 * Link: <TBD>
