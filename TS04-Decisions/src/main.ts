@@ -6,13 +6,20 @@
 // Decisions
 // Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
 
+
+
 // Conditional Operator (Last lesson)
 console.log("\n== Conditional Operator ==");
 console.log((10 > 100) ? "(10>100) is true" : "(10>100) is false");
 
+
+
 // If statement
 console.log("\n== If statement ==");
-if (10 < 100) console.log("10 is less than 100");
+let userInput = "typescript";
+if (userInput === "typescript") console.log("userInput is typescript!");
+
+
 
 // Blocks and Variable Scopes
 console.log("\n== Blocks and Variable Scopes ==");
@@ -26,6 +33,8 @@ if (true) {
 }
 // console.log("innerVar outside block: " + innerVar); - no can't do
 
+
+
 // Else statement
 console.log("\n== Else statement ==");
 if (33 > 100) {
@@ -33,6 +42,8 @@ if (33 > 100) {
 } else {
     console.log("33 is not greater than 100");
 }
+
+
 
 // Nested if/else statement
 console.log("\n== Nested if/else statement ==");
@@ -51,9 +62,30 @@ if (x > 100) {
     }
 }
 
+
+
 // if-else-if ladder
+console.log("\n== if-else-if ladder ==");
+if (x < 10) {
+    console.log("x is less than 10");
+} else if (x < 100) {
+    console.log("x is less than 100");
+} else if (x < 1000) {
+    console.log("x is less than 1000");
+} else {
+    console.log("x is a very large number");
+}
+
+
 
 // Exception Handling
 // Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+// Division by zero
+
+
 
 // Switch statement
+// Morse code
+
+
+
