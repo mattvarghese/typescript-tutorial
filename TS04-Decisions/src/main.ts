@@ -92,10 +92,9 @@ type Circle = {
 
 // type Shape = Square | Circle;
 
-// // NOTE: I have to jump ahead and use a function here
-// //       because discriminated union type guards don't seem to
+// // NOTE: discriminated union type guards don't seem to
 // //       work outside of a function
-// function caclArea(shapeObj: Shape): number {
+// function calcArea(shapeObj: Shape): number {
 //     // We want to calculate the area of this shape
 //     let shapeArea: number;
 //     switch (shapeObj.shape) {
@@ -113,12 +112,12 @@ let shapeObj: Shape = {
     shape: "Square",
     side: 2
 }
-console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+console.log("Area of " + shapeObj.shape + " is: " + calcArea(shapeObj));
 shapeObj = {
     shape: "Circle",
     radius: 1
 }
-console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+console.log("Area of " + shapeObj.shape + " is: " + calcArea(shapeObj));
 
 
 
@@ -133,10 +132,9 @@ type Rectangle = {
 
 type Shape = Circle | Square | Rectangle
 
-// NOTE: I have to jump ahead and use a function here
-//       because discriminated union type guards don't seem to
+// NOTE: discriminated union type guards don't seem to
 //       work outside of a function
-function caclArea(shapeObj: Shape): number {
+function calcArea(shapeObj: Shape): number {
     // We want to calculate the area of this shape
     let shapeArea: number;
     switch (shapeObj.shape) {
@@ -158,9 +156,9 @@ shapeObj = {
     length: 2,
     breadth: 4
 };
-// console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+// console.log("Area of " + shapeObj.shape + " is: " + calcArea(shapeObj));
 try {
-    console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+    console.log("Area of " + shapeObj.shape + " is: " + calcArea(shapeObj));
 }
 catch (e) {
     if (e instanceof Error) {
@@ -174,3 +172,9 @@ finally {
 }
 
 
+
+// All said and done, should you use discriminated unions? 
+// Later we will get to Object Oriented Programming, classes, inheritance etc.
+// Tools in Object Oriented Programming are much cleaner to model situations like these.
+// My recommendation is to avoid discriminated unions except in situations where 
+// the return types of underlying JavaScript make Unions necessary
