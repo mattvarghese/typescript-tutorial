@@ -78,14 +78,99 @@ if (x < 10) {
 
 
 
+// switch statement
+console.log("\n== switch statement ==");
+// Discriminated union
+type Square = {
+    shape: "Square";
+    side: number;
+};
+type Circle = {
+    shape: "Circle";
+    radius: number;
+};
+
+// type Shape = Square | Circle;
+
+// // NOTE: I have to jump ahead and use a function here
+// //       because discriminated union type guards don't seem to
+// //       work outside of a function
+// function caclArea(shapeObj: Shape): number {
+//     // We want to calculate the area of this shape
+//     let shapeArea: number;
+//     switch (shapeObj.shape) {
+//         case "Square":
+//             shapeArea = shapeObj.side ** 2;
+//             break;
+//         case "Circle":
+//             shapeArea = Math.PI * (shapeObj.radius ** 2);
+//             break;
+//     }
+//     return shapeArea;
+// }
+
+let shapeObj: Shape = {
+    shape: "Square",
+    side: 2
+}
+console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+shapeObj = {
+    shape: "Circle",
+    radius: 1
+}
+console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+
+
+
 // Exception Handling
+console.log("\n== Exception Handling ==");
 // Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-// Division by zero
+type Rectangle = {
+    shape: "Rectangle";
+    length: number;
+    breadth: number;
+};
 
+type Shape = Circle | Square | Rectangle
 
+// NOTE: I have to jump ahead and use a function here
+//       because discriminated union type guards don't seem to
+//       work outside of a function
+function caclArea(shapeObj: Shape): number {
+    // We want to calculate the area of this shape
+    let shapeArea: number;
+    switch (shapeObj.shape) {
+        case "Square":
+            shapeArea = shapeObj.side ** 2;
+            break;
+        case "Circle":
+            shapeArea = Math.PI * (shapeObj.radius ** 2);
+            break;
+        default:
+            throw new Error("Area is not implemented for " + shapeObj.shape);
+            break;   // Unnecessary in this case, but preferable for stylistic reasons
+    }
+    return shapeArea;
+}
 
-// Switch statement
-// Morse code
-
+shapeObj = {
+    shape: "Rectangle",
+    length: 2,
+    breadth: 4
+};
+// console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+try {
+    console.log("Area of " + shapeObj.shape + " is: " + caclArea(shapeObj));
+}
+catch (e) {
+    if (e instanceof Error) {
+        console.log("ERROR: " + e.message);
+    } else {
+        console.log("UNKNOWN ERROR");
+    }
+}
+finally {
+    console.log("FINALLY is always invoked");
+}
 
 
